@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Consulta Estudiantil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos adicionales personalizados */
+        .gradient-bg {
+            background: linear-gradient(135deg, #2b4e86 0%, #1a3152 100%);
+        }
+        
+        .card {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+<style type="text/css">
+.grande { font-size: 60px; }
+</style>
+<script>
+// Escribir aqui el código Javascript
+</script>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mr-4{margin-right:1rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-20{height:5rem}.w-16{width:4rem}.w-20{width:5rem}.w-full{width:100%}.min-w-full{min-width:100%}.max-w-md{max-width:28rem}.flex-grow{flex-grow:1}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-gray-200 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(229 231 235 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-l-lg{border-top-left-radius:0.5rem;border-bottom-left-radius:0.5rem}.rounded-r-lg{border-top-right-radius:0.5rem;border-bottom-right-radius:0.5rem}.border-2{border-width:2px}.border-4{border-width:4px}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-t-transparent{border-top-color:transparent}.bg-\[\#2b4e86\]{--tw-bg-opacity:1;background-color:rgb(43 78 134 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-left{text-align:left}.text-center{text-align:center}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-wider{letter-spacing:0.05em}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-purple-800{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-90{opacity:0.9}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-\[\#1a3152\]:hover{--tw-bg-opacity:1;background-color:rgb(26 49 82 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-200:hover{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-green-200:hover{--tw-bg-opacity:1;background-color:rgb(187 247 208 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-200:hover{--tw-bg-opacity:1;background-color:rgb(233 213 255 / var(--tw-bg-opacity, 1))}.focus\:border-blue-500:focus{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width: 768px){.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="https://app.utmachala.edu.ec/siutmach/public/css/seguridades/content/logoSIUTMACH.png" alt="Logo UTMACH - Universidad Técnica de Machala" class="h-16">
+                    <div>
+                        <h1 class="text-2xl font-bold">Sistema Académico</h1>
+                        <p class="text-sm opacity-90">Consulta de datos estudiantiles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="gradient-bg rounded-xl text-white p-8 mb-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Consulta tus datos académicos</h2>
+            <p class="text-xl mb-6">Ingresa tu número de cédula para acceder a tu información de matrícula y datos personales</p>
+            
+            <!-- Search Form -->
+            <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden p-4 shadow-lg">
+                <form id="searchForm" class="flex" onsubmit="event.preventDefault(); buscarCedula();">
+                    <input type="text" id="cedula" placeholder="Ej: 1234567890" class="flex-grow px-4 py-3 rounded-l-lg border-2 border-gray-200 focus:outline-none focus:border-blue-500 text-gray-800">
+                    <button type="submit" class="bg-[#2b4e86] hover:bg-[#1a3152] text-white px-6 py-3 rounded-r-lg font-semibold transition duration-300">
+                        Buscar
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Student Info Card -->
+                <div class="card bg-white rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8e13185d-113f-4bf6-8a74-be1e1b79f26b.png" id="studentImage" alt="Estudiante retrato - Joven con camisa blanca en un aula" class="w-20 h-20 rounded-full border-2 border-blue-200 mr-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800" id="studentName">Nombre del Estudiante</h3>
+                            <p class="text-gray-600" id="studentId">Cédula: 0-0000-0000</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p><span class="font-semibold">Carrera:</span> <span id="studentCareer">Ingeniería</span></p>
+                        <p><span class="font-semibold">Correo:</span> <span id="studentEmail">correo@ejemplo.com</span></p>
+                        <p><span class="font-semibold">Teléfono:</span> <span id="studentPhone">8888-8888</span></p>
+                    </div>
+                </div>
+
+                <!-- Enrollment Status -->
+                <div class="card bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb	-4">Estado de Matrícula</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-semibold">Estado:</span>
+                        <span id="enrollmentStatus" class="px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm">Activo</span>
+                    </div>
+                    <div class="space-y-2">
+                        <p><span class="font-semibold">Periodo:</span> <span id="enrollmentPeriod">2023-1</span></p>
+                        <p><span class="font-semibold">Fecha:</span> <span id="enrollmentDate">01/03/2023</span></p>
+                        <p><span class="font-semibold">Monto:</span> <span id="enrollmentAmount">₡250,000</span></p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Acciones Rápidas</h3>
+                    <div class="space-y-3">
+                        <button class="w-full bg-blue-100 hover:bg-blue-200 text-blue-800 py-2 px-4 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bcb9374-3524-4c35-bd79-f6fec9e7076a.png" alt="Icono de descarga - Flecha hacia abajo dentro de un círculo" class="mr-2">
+                            Descargar Comprobante
+                        </button>
+                        <button class="w-full bg-green-100 hover:bg-green-200 text-green-800 py-2 px-4 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5b1c63f1-1654-44d2-bffb-653990b8731a.png" alt="Icono de horario - Reloj de manecillas mostrando las 3:00" class="mr-2">
+                            Ver Horarios
+                        </button>
+                        <button class="w-full bg-purple-100 hover:bg-purple-200 text-purple-800 py-2 px-4 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/56fd0933-a378-431f-ac71-5f5e8f2f1fe9.png" alt="Icono de calificaciones - Libro abierto con una estrella" class="mr-2">
+                            Ver Calificaciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Table -->
+            <div class="card bg-white rounded-xl p-6 mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Cursos Matriculados</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Código</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Curso</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Horario</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aula</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Profesor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coursesTable" class="bg-white divide-y divide-gray-200">
+                            <!-- Los datos se insertarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Documents Section -->
+            <div class="card bg-white rounded-xl p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Documentos Académicos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Document cards will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading" class="hidden flex justify-center py-12">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-gray-600">Buscando información del estudiante...</p>
+            </div>
+        </div>
+
+        <!-- No Results State -->
+        <div id="noResults" class="hidden text-center py-12">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a2c4fa0f-b961-42d2-b696-f200f9aeca3b.png" alt="No se encontraron resultados - Icono de lupa con un signo de exclamación" class="mx-auto mb-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">No se encontraron resultados</h3>
+            <p class="text-gray-600 mb-6">No encontramos ningún estudiante con el número de cédula proporcionado.</p>
+            <button onclick="window.location.reload()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+                Intentar nuevamente
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-lg font-bold">Universidad Técnica de Machala</h3>
+            <p class="text-gray-400 mt-2">Formando profesionales con excelencia académica</p>
+            <div class="text-gray-400 text-sm mt-4">
+                <p>© 2023 UTMACH. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para el buscador -->
+    <script>
+      function buscarCedula() {
+        const cedula = document.getElementById('cedula').value.trim();
+        if (/^\d{10}$/.test(cedula)) {
+          const baseUrl = "https://script.google.com/macros/s/AKfycbwYgWeS-x7Ypmtq6W17-Mpo6neYVh3wHvWDQGSg1oGMay_Zffm60-19BIuz1Zb95zQlEQ/exec";
+          window.open(`${baseUrl}?cedula=${cedula}`, "_blank");
+        } else {
+          alert("Por favor, ingresa una cédula válida de 10 dígitos numéricos.");
+        }
+      }
+    </script>
+
+
+
+</body></html>
